@@ -1,0 +1,34 @@
+{
+  "source": "UNKNOWN",
+  "types": [
+
+  ],
+  "project_page": "UNKNOWN",
+  "checksums": {
+    "manifests/params.pp": "a38cef94468b166ab9188f7f9fca5e98",
+    "manifests/service.pp": "9c842bc4b00c60b4bd0a5766e295d4fe",
+    "manifests/init.pp": "3a3b672a767f70e869b9b46fe0fa77c4",
+    "LICENSE": "f8a2562cac0b3859771886422f703d27",
+    "Modulefile": "27a4153f9ab2e58355fb6be8e03623b8",
+    "README": "efb747e6ff0c1631fff4bc77424d43d9",
+    "templates/ntpd.conf.erb": "d36f080fb1c250be6da6dcb98820050d",
+    "manifests/package.pp": "cee16b3217d9851bd6024710f09a253d",
+    "manifests/service/openbsd.pp": "bd262e2c9b37676cac130a7a86bac344"
+  },
+  "license": "ISC",
+  "dependencies": [
+    {
+      "version_requirement": ">= 3.2.0",
+      "name": "puppetlabs/stdlib"
+    },
+    {
+      "version_requirement": ">= 0.1.0",
+      "name": "oppegaard/openbsd"
+    }
+  ],
+  "version": "0.1.0",
+  "summary": "OpenNTP module for OpenBSD",
+  "description": "This module manages OpenNTPD service and configuration on OpenBSD.",
+  "author": "Martin Oppegaard",
+  "name": "oppegaard-ntpd"
+}

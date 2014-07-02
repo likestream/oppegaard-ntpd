@@ -1,0 +1,38 @@
+# ntpd
+
+Manages OpenNTPD - service and configuration.
+
+## Configuration
+
+Class ntpd takes one argument, settings, which is an array whose elements are the
+literal lines that will go into `ntpd.conf(5)`.  A minimal configuration which uses
+ntp.org's European pool is as follows:
+
+    class { 'ntpd':
+      settings => [
+        "servers europe.pool.ntp.org",
+      ],
+    }
+
+## Examples
+
+Setting up a server which requires ntpd to be started with the `-s` parameter.
+
+    class ntpd_server inherits ntpd::service::openbsd {
+      class { 'ntpd':
+        settings => [
+          "listen on $::ipaddress",
+          "servers europe.pool.ntp.org",
+        ],
+      }
+      
+      Rcconf['ntpd_flags'] {
+        value => '"-s"',
+      }
+    }
+    
+    node 'ntp.my.domain' {
+      include ntpd_server
+    }
+
+See `ntpd.conf(5)` for how to configure OpenNTPD.
