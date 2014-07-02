@@ -6,8 +6,9 @@ class ntpd::service::openbsd {
     path              => '/etc/rc.conf.local',
     section           => '',
     setting           => 'ntpd_flags',
-    value             => $ntpd::params::ntpd_flags_value,
+#    value             => $ntpd::params::ntpd_flags_value,
+    value             => '"-v"',
     key_val_separator => '=',
   }
 
-}
+
