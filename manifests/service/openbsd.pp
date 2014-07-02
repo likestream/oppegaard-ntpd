@@ -10,5 +10,7 @@ class ntpd::service::openbsd {
     value             => '"-v"',
     key_val_separator => '=',
   }
+}
+
 
 
