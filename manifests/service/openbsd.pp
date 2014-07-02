@@ -1,8 +1,13 @@
 class ntpd::service::openbsd {
   include ntpd::params
 
-  rcconf { 'ntpd_flags':
-    value => $ntpd::params::ntpd_flags,
-    before => Class['ntpd::service'],
+  ini_setting { 'ntpd_flags':
+    ensure            => present,
+    path              => '/etc/rc.conf.local',
+    section           => '',
+    setting           => 'ntpd_flags',
+    value             => $ntpd::params::ntpd_flags_value,
+    key_val_separator => '=',
   }
+
 }

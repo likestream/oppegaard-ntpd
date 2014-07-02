@@ -3,6 +3,7 @@ class ntpd::params {
   $user = 'root'
   $mode = '0644'
   $service = 'ntpd'
+  $ntpd_flags_value = '"-v"'
 
   case $::osfamily {
     'OpenBSD': {
